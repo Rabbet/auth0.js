@@ -1,7 +1,7 @@
 /**
  * auth0-js v9.10.4
  * Author: Auth0
- * Date: 2019-05-24
+ * Date: 2019-06-03
  * License: MIT
  */
 
@@ -8390,6 +8390,7 @@
 	  parsedQs = lib.parse(hashStr);
 
 	  if (parsedQs.hasOwnProperty('error')) {
+	    console.log("src/web-auth/index.js LINE159");
 	    err = error.buildResponse(parsedQs.error, parsedQs.error_description);
 
 	    if (parsedQs.state) {
@@ -8510,6 +8511,7 @@
 	        payload.at_hash,
 	        function(err) {
 	          if (err) {
+	            console.log("src/web-auth/index.js LINE280");
 	            return callback(error.invalidToken(err.message));
 	          }
 	          return callback(null, payload);
@@ -8587,6 +8589,7 @@
 
 	  verifier.verify(token, nonce, function(err, payload) {
 	    if (err) {
+	      console.log("src/web-auth/index.js LINE358");
 	      return cb(error.invalidToken(err.message));
 	    }
 

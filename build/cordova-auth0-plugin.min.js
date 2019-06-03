@@ -1,7 +1,7 @@
 /**
  * auth0-js v9.10.4
  * Author: Auth0
- * Date: 2019-05-24
+ * Date: 2019-06-03
  * License: MIT
  */
 
