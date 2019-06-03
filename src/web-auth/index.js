@@ -156,6 +156,7 @@ WebAuth.prototype.parseHash = function(options, cb) {
   parsedQs = qs.parse(hashStr);
 
   if (parsedQs.hasOwnProperty('error')) {
+    console.log("src/web-auth/index.js LINE159");
     err = error.buildResponse(parsedQs.error, parsedQs.error_description);
 
     if (parsedQs.state) {
@@ -276,6 +277,7 @@ WebAuth.prototype.validateAuthenticationResponse = function(options, parsedHash,
         payload.at_hash,
         function(err) {
           if (err) {
+            console.log("src/web-auth/index.js LINE280");
             return callback(error.invalidToken(err.message));
           }
           return callback(null, payload);
@@ -353,6 +355,7 @@ WebAuth.prototype.validateToken = function(token, nonce, cb) {
 
   verifier.verify(token, nonce, function(err, payload) {
     if (err) {
+      console.log("src/web-auth/index.js LINE358");
       return cb(error.invalidToken(err.message));
     }
 
